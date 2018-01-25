@@ -9,6 +9,7 @@ function CounterList(props) {
         return (
           <Counter
             onCounterUp={props.onCounterUp}
+            onCounterDown={props.onCounterDown}
             title={counter.title}
             number={counter.number}
             key={index}
