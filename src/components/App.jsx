@@ -13,7 +13,7 @@ class App extends React.Component {
         {title: 'counter2', number: 0, id: 2},
         {title: 'counter3', number: 0, id: 3}
       ]
-    }
+    };
     this.handleCountUp = this.handleCountUp.bind(this);
     this.handleCountDown = this.handleCountDown.bind(this);
     this.handleNewCounterCreation = this.handleNewCounterCreation.bind(this);
@@ -23,7 +23,7 @@ class App extends React.Component {
     let newMasterCounterArray = this.state.masterCounterArray.slice();
     for (let i = 0; i < newMasterCounterArray.length; i++) {
       if (newMasterCounterArray[i].id === id) {
-        newMasterCounterArray[i].number+=1
+        newMasterCounterArray[i].number+=1;
       }
     }
     this.setState({masterCounterArray: newMasterCounterArray});
@@ -33,7 +33,7 @@ class App extends React.Component {
     let newMasterCounterArray = this.state.masterCounterArray.slice();
     for (let i = 0; i < newMasterCounterArray.length; i++) {
       if (newMasterCounterArray[i].id === id) {
-        newMasterCounterArray[i].number-=1
+        newMasterCounterArray[i].number-=1;
       }
     }
     this.setState({masterCounterArray: newMasterCounterArray});
@@ -41,7 +41,7 @@ class App extends React.Component {
 
   handleNewCounterCreation(newPost) {
     let newMasterCounterArray = this.state.masterCounterArray.slice();
-    newMasterCounterArray.push(newPost)
+    newMasterCounterArray.push(newPost);
     this.setState({masterCounterArray: newMasterCounterArray});
   }
 
@@ -51,14 +51,14 @@ class App extends React.Component {
         <Header/>
         <Switch>
           <Route exact path='/' render={()=>
-              <CounterList
-                counterArray={this.state.masterCounterArray}
-                onCounterUp={this.handleCountUp}
-                onCounterDown={this.handleCountDown} />} />
+            <CounterList
+              counterArray={this.state.masterCounterArray}
+              onCounterUp={this.handleCountUp}
+              onCounterDown={this.handleCountDown} />} />
           <Route path='/form' render={()=>
-              <CounterForm
-                onNewCounterCreation={this.handleNewCounterCreation}
-              />} />
+            <CounterForm
+              onNewCounterCreation={this.handleNewCounterCreation}
+            />} />
         </Switch>
       </div>
     );

@@ -9,22 +9,25 @@ function Counter(props){
   }
 
   function handleDownButton() {
-    props.onCounterDown(props.id)
+    props.onCounterDown(props.id);
   }
 
-    return(
-      <div>
-        <p>{props.title}</p>
-        <h4>{props.number}</h4>
-        <button onClick={handleUpButton}>Up</button>
-        <button onClick={handleDownButton}>Down</button>
-      </div>
-    );
+  return(
+    <div>
+      <p>{props.title}</p>
+      <h4>{props.number}</h4>
+      <button onClick={handleUpButton}>Up</button>
+      <button onClick={handleDownButton}>Down</button>
+    </div>
+  );
 
 }
 
 Counter.PropTypes = {
-  number: PropTypes.number
-}
+  number: PropTypes.number,
+  title: PropTypes.string,
+  onCounterUp: PropTypes.func,
+  onCounterDown: PropTypes.func
+};
 
 export default Counter;

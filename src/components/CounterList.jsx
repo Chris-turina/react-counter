@@ -14,8 +14,8 @@ function CounterList(props) {
             title={counter.title}
             number={counter.number}
             id={counter.id}
-            />
-        )
+          />
+        );
       }
       )}
     </div>
@@ -23,7 +23,9 @@ function CounterList(props) {
 }
 
 CounterList.propTypes = {
-  counterArray: PropTypes.array
-}
+  counterArray: PropTypes.array,
+  onCounterUp: PropTypes.func,
+  onCounterDown: PropTypes.func
+};
 
 export default CounterList;
