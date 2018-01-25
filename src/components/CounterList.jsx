@@ -6,7 +6,6 @@ function CounterList(props) {
   return(
     <div>
       {props.counterArray.map((counter) => {
-        console.log(counter);
         return (
           <Counter
             onCounterUp={props.onCounterUp}

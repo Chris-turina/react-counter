@@ -24,9 +24,12 @@ class App extends React.Component {
     for (let i = 0; i < newMasterCounterArray.length; i++) {
       if (newMasterCounterArray[i].id === id) {
         newMasterCounterArray[i].number+=1;
+
       }
+
     }
-    this.setState({masterCounterArray: newMasterCounterArray});
+    const sortedArray = this.sortCounters(newMasterCounterArray);
+    this.setState({masterCounterArray: sortedArray});
   }
 
   handleCountDown(id) {
@@ -36,13 +39,27 @@ class App extends React.Component {
         newMasterCounterArray[i].number-=1;
       }
     }
+    const sortedArray = this.sortCounters(newMasterCounterArray);
     this.setState({masterCounterArray: newMasterCounterArray});
   }
+
 
   handleNewCounterCreation(newPost) {
     let newMasterCounterArray = this.state.masterCounterArray.slice();
     newMasterCounterArray.push(newPost);
     this.setState({masterCounterArray: newMasterCounterArray});
+  }
+
+  sortCounters(sortArray){
+    console.log('kudo smells');
+    for (let i = 0; i < sortArray.length; i++) {
+      sortArray.sort(function(a: sortArray, b: sortArray){
+        return b.number - a.number
+      })
+    }
+    console.log(sortArray);
+    return sortArray;
+
   }
 
   render(){
