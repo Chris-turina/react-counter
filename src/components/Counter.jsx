@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 function Counter(props){
 
   function handleUpButton() {
-    props.onCounterUp(props.title);
+    props.onCounterUp(props.id);
   }
 
   function handleDownButton() {
-    props.onCounterDown(props.title)
+    props.onCounterDown(props.id)
   }
 
     return(
